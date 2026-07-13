@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Portfolio from './components/Portfolio'
 
+const API_URL = import.meta.env.VITE_API_URL
+
 function App() {
   const [sections, setSections] = useState([])
   const [loading, setLoading] = useState(true)
@@ -10,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchSections = async () => {
       try {
-        const response = await axios.get('/api/sections')
+        const response = await axios.get(`${API_URL}/api/sections`)
         setSections(response.data)
         setLoading(false)
       } catch (err) {
