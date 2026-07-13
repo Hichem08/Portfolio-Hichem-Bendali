@@ -37,7 +37,7 @@ function App() {
     return (
       <div className="error-screen">
         <h1>Error: {error}</h1>
-        <p>Unable to connect to the server. Please try again later.</p>
+        <p><p>Unable to connect to the server. Please try again later.</p></p>
       </div>
     )
   }
