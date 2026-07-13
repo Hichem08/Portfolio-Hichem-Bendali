@@ -1,0 +1,43 @@
+Portfolio Documentation
+
+Project: folio-portfolio
+Location: client/
+
+Overview
+This is a single-page portfolio built with React and Vite. The content is organized into scroll-snapped sections:
+1. Hero / intro
+2. About
+3. Services
+4. Tech stack
+5. Graphic design gallery
+6. Solar / project showcase
+7. Contact
+
+Key Files
+- client/src/App.jsx: application layout and section composition
+- client/src/components/pages/: section components
+- client/src/styles.css: global layout, section styles, and responsive rules
+- client/src/components/pages/Section5.jsx: graphic design gallery section
+- client/src/components/pages/Section7.jsx: contact section
+
+Run Commands
+- Install dependencies: npm install (from client/)
+- Development server: npm run dev (from client/)
+- Production build: npm run build (from client/)
+
+Performance Notes
+- Section 5 now renders without artificial timeout delays.
+- Gallery images load eagerly to reduce visible lag while scrolling.
+- Mobile gallery interactions are simplified to reduce touch and hover overhead.
+- Heavy animated background effects are reduced on tablets and phones to improve scroll smoothness.
+
+Responsive Notes
+- Desktop layout is preserved.
+- Mobile and tablet layouts use smaller text, tighter spacing, and simplified animations where needed.
+
+Content Notes
+- Contact details and social links are defined in Section7.jsx.
+- The gallery section uses local images from client/src/assets/images/.
+
+Build Verification
+- Last verified with a production build using Vite.

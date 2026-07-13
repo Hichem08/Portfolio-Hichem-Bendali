@@ -1,0 +1,31 @@
+import { motion } from 'framer-motion'
+
+export default function Header() {
+  return (
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="nav-logo">folio</div>
+      <ul className="nav-menu">
+        <li><a href="#demos">DEMOS</a></li>
+        <li><a href="#pages">PAGES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#blogs">BLOGS</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
+      </ul>
+      <button className="nav-cta">Let's contact</button>
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '20px 40px',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    </motion.nav>
+  )
+}
