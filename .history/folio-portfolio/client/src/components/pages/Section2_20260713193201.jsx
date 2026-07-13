@@ -26,6 +26,7 @@ const initialDiplomaImages = [
   }
 ]
 
+const DIPLOMAS_STORAGE_KEY = 'portfolio-diploma-images'
 
 const defaultAboutParagraphs = [
   'I am a passionate Full-Stack Developer experienced in building modern web and mobile applications using technologies such as JavaScript, React, and Node.js. I focus on creating scalable, efficient, and user-centered digital solutions from concept to deployment.',
@@ -34,7 +35,22 @@ const defaultAboutParagraphs = [
   'I am fluent in English, French, and Arabic, and I am always eager to contribute to innovative projects in technology and renewable energy.',
 ]
 
+function loadStoredDiplomas() {
+  try {
+    const stored = localStorage.getItem(DIPLOMAS_STORAGE_KEY)
+    if (!stored) return initialDiplomaImages
 
+    const parsed = JSON.parse(stored)
+    if (!Array.isArray(parsed)) return initialDiplomaImages
+
+    return initialDiplomaImages.map((diploma, idx) => ({
+      ...diploma,
+      src: parsed[idx]?.src ?? diploma.src,
+    }))
+  } catch {
+    return initialDiplomaImages
+  }
+}
 
 export default function Section2({ section }) {
   const imageUrl = pcImage
@@ -52,7 +68,7 @@ export default function Section2({ section }) {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
-  const [diplomas] = useState(initialDiplomaImages)
+  const [diplomas, setDiplomas] = useState(loadStoredDiplomas)
   const [activeDiploma, setActiveDiploma] = useState(null)
 
   const handleDiplomaClick = (diploma, index) => {

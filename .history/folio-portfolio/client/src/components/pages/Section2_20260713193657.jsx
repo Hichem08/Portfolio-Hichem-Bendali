@@ -26,6 +26,7 @@ const initialDiplomaImages = [
   }
 ]
 
+const DIPLOMAS_STORAGE_KEY = 'portfolio-diploma-images'
 
 const defaultAboutParagraphs = [
   'I am a passionate Full-Stack Developer experienced in building modern web and mobile applications using technologies such as JavaScript, React, and Node.js. I focus on creating scalable, efficient, and user-centered digital solutions from concept to deployment.',

@@ -27,6 +27,7 @@ const initialDiplomaImages = [
 ]
 
 
+
 const defaultAboutParagraphs = [
   'I am a passionate Full-Stack Developer experienced in building modern web and mobile applications using technologies such as JavaScript, React, and Node.js. I focus on creating scalable, efficient, and user-centered digital solutions from concept to deployment.',
   'I also have a strong background in Graphic Design, which helps me craft clean and intuitive user interfaces with a strong attention to detail and user experience.',
