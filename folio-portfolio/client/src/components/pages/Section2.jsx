@@ -62,7 +62,102 @@ export default function Section2({ section }) {
 
   // Helper functions for responsive sizing
   const getIconSize = () => isMobile ? 20 : 28
-  const getDiplomaSlotSize = () => isMobile ? { width: 65, height: 85 } : { width: 90, height: 120 }
+  const getDiplomaSlotSize = () => {
+  const width = window.innerWidth;
+
+  if (width <= 320) {
+    return { width: 42, height: 56 };
+  }
+
+  if (width <= 360) {
+    return { width: 48, height: 64 };
+  }
+
+  if (width <= 375) {
+    return { width: 52, height: 70, margin: '0 5px' };
+  }
+
+  if (width <= 390) {
+    return { width: 56, height: 75, margin: '0 2px' };
+  }
+
+  if (width <= 768) {
+    return { width: 60, height: 80 };
+  }
+
+  return { width: 90, height: 120 };
+};
+
+const getAboutCardSize = () => {
+  const width = window.innerWidth;
+
+  if (width <= 320) {
+    return {
+      maxWidth: 280,
+      padding: 8,
+      radius: 10,
+      title: 16,
+      text: 9,
+      maxHeight: 110,
+    };
+  }
+
+  if (width <= 360) {
+    return {
+      maxWidth: 300,
+      padding: 10,
+      radius: 12,
+      title: 17,
+      text: 10,
+      maxHeight: 120,
+    };
+  }
+
+  if (width <= 375) {
+    return {
+      maxWidth: 320,
+      padding: 12,
+      radius: 14,
+      title: 18,
+      text: 10.5,
+      maxHeight: 130,
+    };
+  }
+
+  if (width <= 390) {
+    return {
+      maxWidth: 340,
+      padding: 10,
+      radius: 15,
+      title: 19,
+      text: 11,
+      maxHeight: 10,
+    };
+  }
+
+  if (width <= 768) {
+    return {
+      maxWidth: 700,
+      padding: 15,
+      radius: 16,
+      title: 20,
+      text: 12,
+      maxHeight: 150,
+    };
+  }
+
+  return {
+    maxWidth: 800,
+    padding: 18,
+    radius: 18,
+    title: 22,
+    text: 14,
+    maxHeight: 220,
+  };
+  
+};
+
+const aboutCard = getAboutCardSize();
 
   return (
     <motion.section
@@ -94,13 +189,14 @@ export default function Section2({ section }) {
             transition={{ duration: 0.3, delay: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             style={{
-              width: '100%',
-              padding: '15px',
-              borderRadius: '16px',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
-              background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02))',
-              backdropFilter: 'blur(8px)',
-            }}
+  width: '100%',
+  maxWidth: aboutCard.maxWidth,
+  padding: aboutCard.padding,
+  borderRadius: aboutCard.radius,
+  border: '1px solid rgba(255,255,255,0.12)',
+  background: 'linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02))',
+  backdropFilter: 'blur(8px)',
+}}
           >
             <motion.h2
               style={{

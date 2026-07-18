@@ -109,6 +109,100 @@ export default function Section3({ section, onScrollToSection }) {
     setActiveCardIndex({ ...activeCardIndex, [cardId]: prevIndex })
   }
 
+   const getServiceCardSize = () => {
+  const width = window.innerWidth;
+
+  if (width <= 320) {
+    return {
+      cardWidth: 250,
+      padding: 8,
+      title: 11,
+      imageRatio: "16 / 11",
+      arrow: 20,
+      arrowFont: 10,
+      buttonFont: 8,
+      buttonPadding: "6px 10px",
+      dot: 4,
+      activeDot: 12,
+      counter: 8,
+      gap: 6,
+      radius: 10,
+    };
+  }
+
+  if (width <= 360) {
+    return {
+      cardWidth: 270,
+      padding: 9,
+      title: 12,
+      imageRatio: "16 / 11",
+      arrow: 22,
+      arrowFont: 11,
+      buttonFont: 9,
+      buttonPadding: "7px 12px",
+      dot: 4,
+      activeDot: 13,
+      counter: 8,
+      gap: 7,
+      radius: 11,
+    };
+  }
+
+  if (width <= 375) {
+    return {
+      cardWidth: 285,
+      padding: 10,
+      title: 12,
+      imageRatio: "16 / 11",
+      arrow: 24,
+      arrowFont: 11,
+      buttonFont: 9,
+      buttonPadding: "7px 13px",
+      dot: 5,
+      activeDot: 14,
+      counter: 9,
+      gap: 8,
+      radius: 12,
+    };
+  }
+
+  if (width <= 390) {
+    return {
+      cardWidth: 300,
+      padding: 10,
+      title: 13,
+      imageRatio: "16 / 11",
+      arrow: 26,
+      arrowFont: 12,
+      buttonFont: 10,
+      buttonPadding: "8px 14px",
+      dot: 5,
+      activeDot: 14,
+      counter: 9,
+      gap: 8,
+      radius: 12,
+    };
+  }
+
+  return {
+    cardWidth: 300,
+    padding: 10,
+    title: 13,
+    imageRatio: "16 / 11",
+    arrow: 26,
+    arrowFont: 12,
+    buttonFont: 10,
+    buttonPadding: "8px 14px",
+    dot: 5,
+    activeDot: 14,
+    counter: 9,
+    gap: 8,
+    radius: 12,
+  };
+};
+
+const serviceSize = getServiceCardSize();
+
   return (
     <motion.section
       className="section section-dark"
@@ -130,7 +224,8 @@ export default function Section3({ section, onScrollToSection }) {
                 viewport={{ once: true, amount: 0.25 }}
                 whileHover={{ y: -4 }}
                 style={{
-                  width: '95%',
+                  width:'87%',
+maxWidth:serviceSize.cardWidth,
                   maxWidth: '300px',
                   margin: '0 auto',
                   background: 'linear-gradient(135deg, rgba(255, 87, 34, 0.06) 0%, rgba(255, 87, 34, 0) 100%)',

@@ -254,6 +254,8 @@ nav {
     height: 130px !important; /* Smaller height */
     margin-top: 10px !important;
   }
+
+
 }
 
 /* Styles for screens between 768px and 1024px (tablets) */
@@ -272,7 +274,7 @@ nav {
    RESPONSIVE STYLES FOR SECTION 2 (ABOUT ME)
    ================================================ */
 /* Mobile styles for Section 2 */
-@media (max-width: 768px) {
+@media (max-width: 768px )  {
   /* Ensure Section 2 content is properly sized */
   .section-content {
     flex-direction: column !important;
@@ -294,6 +296,8 @@ nav {
     justify-content: center !important;
   }
 }
+
+
 
 /* ================================================
    RESPONSIVE STYLES FOR SECTION 3 (FEATURED SERVICES)
@@ -1534,12 +1538,25 @@ h2 span:hover {
 
 /* ================================================
    SOLAR ENERGY SECTION - SECTION 6
+   Desktop defaults; mobile overrides via media queries only
    ================================================ */
 
+.solar-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
 .solar-items-wrapper {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
   margin-top: 40px;
+}
+
+.solar-item-container {
+  width: 100%;
 }
 
 .solar-grid {
@@ -1557,11 +1574,17 @@ h2 span:hover {
   direction: ltr;
 }
 
+.solar-image-wrap {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 .solar-image {
+  display: block;
   width: 100%;
   height: 310px;
-  border-radius: 12px;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 .solar-text-container {
@@ -1581,6 +1604,177 @@ h2 span:hover {
   font-size: 20px;
   color: #aaa;
   line-height: 1.4;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .solar-items-wrapper {
+    gap: 8px;
+    margin-top: 30px;
+  }
+
+  .solar-grid {
+    gap: 30px;
+  }
+
+  .solar-image {
+    height: 250px;
+  }
+
+  .solar-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .solar-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .solar-container {
+    padding: 0 clamp(12px, 4vw, 20px);
+  }
+
+  .solar-items-wrapper {
+    gap: clamp(14px, 4vw, 22px);
+    margin-top: clamp(16px, 5vw, 25px);
+  }
+
+  .solar-grid {
+    grid-template-columns: minmax(100px, 38%) 1fr;
+    gap: clamp(10px, 3vw, 16px);
+    align-items: center;
+  }
+
+  .solar-grid.reversed {
+    direction: rtl;
+  }
+
+  .solar-image-wrap {
+    border-radius: clamp(8px, 2.5vw, 12px);
+  }
+
+  .solar-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    border-radius: clamp(8px, 2.5vw, 12px);
+  }
+
+  .solar-title {
+    font-size: clamp(13px, 3.8vw, 17px);
+    margin-bottom: clamp(4px, 1.2vw, 6px);
+    letter-spacing: 0.5px;
+  }
+
+  .solar-description {
+    font-size: clamp(10px, 2.9vw, 13px);
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 480px) {
+  .solar-grid {
+    grid-template-columns: minmax(88px, 36%) 1fr;
+    gap: clamp(8px, 2.5vw, 12px);
+  }
+
+  .solar-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .solar-title {
+    font-size: clamp(12px, 3.4vw, 15px);
+  }
+
+  .solar-description {
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 390px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 90%) 1fr;
+    gap: 8px;
+  }
+
+  .solar-image {
+    aspect-ratio: 1.3 / 2;
+  }
+
+  .solar-title {
+    font-size: 11px;
+  }
+
+  .solar-description {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 430px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 70%) 1fr;
+    gap: 8px;
+    
+}
+.solar-image {
+  aspect-ratio: 1.3 / 2;
+}
+.solar-title {
+  font-size: 12px;
+}
+.solar-description {
+  font-size: 14px;
+  line-height: 1.55;
+}
+.solar-container {
+  margin-top: 40px;
+}
+};
+
+@media (min-width: 375px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 80%) 1fr;
+    gap: 8px;
+  }
+  .solar-image {
+    aspect-ratio: 1.6 / 2;
+  }
+  .solar-title {
+    font-size: 10px;
+  }
+  .solar-description {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+  .solar-container {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 360px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 70%) 1fr;
+    gap: 8px;
+  }
+  .solar-image {
+    aspect-ratio: 1.3 / 2;
+  }
+
+.solar-title {
+  font-size: 11px;
+}
+.solar-description {
+  font-size: 12px;
+  line-height: 1.35;
+}
+.solar-container {
+  margin-top: 40px;
+}
 }
 
 /* ================================================
@@ -1816,30 +2010,7 @@ h2 span:hover {
     gap: 30px;
   }
 
-  /* Solar section mobile */
-  .solar-grid {
-    grid-template-columns: 1fr;
-    gap: 1px;
-    height: 400px;
-    width: 100%;
-    
-    
-  }
-
-  .solar-grid.reversed {
-    direction: ltr;
-    height: 200px;
-    margin-bottom: 190px;
-  }
-
-  .solar-title {
-    font-size: 15px;
-  }
-
-  .solar-description {
-    font-size: 14px;
-    padding: 1px 1px;
-  }
+ 
 
   /* Contact section mobile */
   .contact-info-wrapper {
@@ -2155,4 +2326,35 @@ h2 span:hover {
     margin-left: 120px !important;
   }
 }
+
+@media (max-width: 390px) {
+
+  .hero-content h1 {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 100px;
+  letter-spacing: -1px;
+}
+
+  .diplomas-section {
+    align-items: flex-start;
+    width: 100%;
+    
+  }
+
+  .diplomas-card {
+    max-width: 100%;
+    width: 100%;
+    height: 100px;
+  }
+
+}
+
+
+
+    
+  
+
+  
 

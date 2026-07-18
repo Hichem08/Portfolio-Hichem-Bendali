@@ -23,6 +23,138 @@ export default function Section5({ section }) {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
+  const getGalleryResponsive = () => {
+  const width = window.innerWidth;
+
+  if (width <= 320)
+    return {
+      sectionPadding: '1rem 0.4rem 2rem',
+
+      subtitle: '0.65rem',
+
+      title: '1rem',
+
+      titleHeight: 60,
+
+      photoWidth: 150,
+
+      photoHeight: 75,
+
+      photoGap: '0.5rem',
+
+      photosMarginTop: '5rem',
+
+      containerHeight: 250,
+    };
+
+  if (width <= 360)
+    return {
+      sectionPadding: '1rem 0.6rem 2rem',
+
+      subtitle: '0.75rem',
+
+      title: '1.15rem',
+
+      titleHeight: 70,
+
+      photoWidth: 165,
+
+      photoHeight: 82,
+
+      photoGap: '0.6rem',
+
+      photosMarginTop: '6rem',
+
+      containerHeight: 300,
+    };
+
+  if (width <= 375)
+    return {
+      sectionPadding: '1rem 0.8rem 2rem',
+
+      subtitle: '0.8rem',
+
+      title: '1.25rem',
+
+      titleHeight: 80,
+
+      photoWidth: 180,
+
+      photoHeight: 90,
+
+      photoGap: '0.7rem',
+
+      photosMarginTop: '7rem',
+
+      containerHeight: 340,
+    };
+
+  if (width <= 390)
+    return {
+      sectionPadding: '1rem 1rem 2rem',
+
+      subtitle: '0.85rem',
+
+      title: '1.35rem',
+
+      titleHeight: 90,
+
+      photoWidth: 190,
+
+      photoHeight: 95,
+
+      photoGap: '0.75rem',
+
+      photosMarginTop: '8rem',
+
+      containerHeight: 360,
+    };
+
+    if (width <= 430)
+    return {
+      sectionPadding: '1rem 1rem 2rem',
+
+      subtitle: '0.85rem',
+
+      title: '1.45rem',
+
+      titleHeight: 90,
+
+      photoWidth: 210,
+
+      photoHeight: 99,
+
+      photoGap: '0.95rem',
+
+      photosMarginTop: '9rem',
+
+      containerHeight: 390,
+    };
+
+  return {
+    sectionPadding: '1rem 1rem 2rem',
+
+    subtitle: '0.9rem',
+
+    title: '1.5rem',
+
+    titleHeight: 100,
+
+    photoWidth: 200,
+
+    photoHeight: 100,
+
+    photoGap: '0.75rem',
+
+    photosMarginTop: '10rem',
+
+    containerHeight: 400,
+  };
+  
+};
+
+const gallery = getGalleryResponsive();
+
   const animationDelay = 0.5
 
   useEffect(() => {
@@ -86,6 +218,7 @@ export default function Section5({ section }) {
       direction: 'left',
       src: logo,
       objectFit: 'cover',
+      loading: 'lazy',
     },
     {
       id: 2,
@@ -95,6 +228,7 @@ export default function Section5({ section }) {
       zIndex: 40,
       direction: 'left',
       src: Cours,
+      loading: 'lazy',
     },
     {
       id: 3,
@@ -104,6 +238,7 @@ export default function Section5({ section }) {
       zIndex: 30,
       direction: 'right',
       src: a,
+      loading: 'lazy',
     },
     {
       id: 4,
@@ -113,6 +248,7 @@ export default function Section5({ section }) {
       zIndex: 20,
       direction: 'right',
       src: Europe,
+      loading: 'lazy',
     },
     {
       id: 5,
@@ -122,6 +258,7 @@ export default function Section5({ section }) {
       zIndex: 10,
       direction: 'left',
       src: after,
+      loading: 'lazy',
     },
   ]
 
@@ -131,10 +268,12 @@ export default function Section5({ section }) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.1 }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
     >
       <div className="gallery-container" style={{ 
-        padding: isMobile ? '1rem 1rem 2rem' : '0',
+        padding:isMobile
+    ? gallery.sectionPadding
+    :'0',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -180,14 +319,14 @@ export default function Section5({ section }) {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 style={{ 
                   display: 'flex', 
                   flexDirection: 'column', 
                   alignItems: 'center', 
-                  gap: '0.75rem', 
+                  gap:gallery.photoGap,
                   marginTop: '0rem',
-                  width: '100%', height:'400px',
+                  width: '100%', height:gallery.containerHeight,
                   justifyContent: 'center'
                 }}
               >
@@ -195,10 +334,10 @@ export default function Section5({ section }) {
                   display: 'flex', 
                   flexDirection: 'column', 
                   alignItems: 'center', 
-                  gap: '0.75rem',
+                  gap:gallery.photoGap,
                   width: '100%',
                   justifyContent: 'center',
-                  marginTop: '10rem',
+                  marginTop:gallery.photosMarginTop
                 }}>
                   {photos.map((photo, index) => (
                     <motion.div
@@ -214,11 +353,20 @@ export default function Section5({ section }) {
                       initial={{ opacity: 0, y: 15 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                     >
                       <Photo
-                        width={isMobile ? 200 : 220}
-                        height={isMobile ? 100 : 220}
+                        width={
+isMobile
+? gallery.photoWidth
+:220
+}
+
+height={
+isMobile
+? gallery.photoHeight
+:240
+}
                         src={photo.src}
                         alt="Gallery photo"
                         direction={photo.direction}

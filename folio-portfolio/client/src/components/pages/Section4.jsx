@@ -27,6 +27,72 @@ export default function Section4({ section }) {
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
+  const getTechResponsive = () => {
+  const width = window.innerWidth;
+
+  if (width <= 320)
+    return {
+      sectionPadding: '0 6px',
+      groupGap: '1.2rem',
+      title: '0.95rem',
+      icon: '1.2rem',
+      text: '0.55rem',
+      iconGap: '3px',
+      gridGap: '0.7rem',
+      titleMargin: '0.8rem',
+    };
+
+  if (width <= 360)
+    return {
+      sectionPadding: '0 8px',
+      groupGap: '1.5rem',
+      title: '1rem',
+      icon: '1.35rem',
+      text: '0.60rem',
+      iconGap: '4px',
+      gridGap: '0.8rem',
+      titleMargin: '0.9rem',
+    };
+
+  if (width <= 375)
+    return {
+      sectionPadding: '0 10px',
+      groupGap: '1.7rem',
+      title: '1.05rem',
+      icon: '1.45rem',
+      text: '0.65rem',
+      iconGap: '4px',
+      gridGap: '0.9rem',
+      titleMargin: '1rem',
+    };
+
+  if (width <= 390)
+    return {
+      sectionPadding: '0 12px',
+      groupGap: '1.8rem',
+      title: '1.1rem',
+      icon: '1.55rem',
+      text: '0.70rem',
+      iconGap: '4px',
+      gridGap: '1rem',
+      titleMargin: '1rem',
+    };
+
+  return {
+    sectionPadding: '0 10px',
+    groupGap: '2rem',
+    title: '1.125rem',
+    icon: '1.75rem',
+    text: '0.75rem',
+    iconGap: '4px',
+    gridGap: '1rem',
+    titleMargin: '1rem',
+  };
+};
+
+const techResponsive = getTechResponsive();
+
+
   const techStack = {
     frontend: [
       { name: 'HTML', icon: FaHtml5 },
@@ -83,10 +149,14 @@ export default function Section4({ section }) {
         transition={{ duration: 0.5, delay: index * 0.08 }}
         viewport={{ once: false }}
         whileHover={{ scale: 1.2, rotate: 5 }}
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? '4px' : '8px' }}
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? techResponsive.iconGap : '8px' }}
       >
-        <IconComponent className="tech-icon" style={{ fontSize: isMobile ? '1.75rem' : '2.5rem' }} />
-        <span style={{ color: '#fff', fontSize: isMobile ? '0.75rem' : '0.875rem', textAlign: 'center' }}>{tech.name}</span>
+        <IconComponent className="tech-icon" style={{ fontSize: isMobile
+  ? techResponsive.icon
+  : '2.5rem' }} />
+        <span style={{ color: '#fff', fontSize: isMobile
+  ? techResponsive.text
+  : '0.875rem', textAlign: 'center' }}>{tech.name}</span>
       </motion.div>
     )
   }
@@ -103,8 +173,8 @@ export default function Section4({ section }) {
         className="tech-card-title" 
         style={{ 
           color: '#ff5722', 
-          marginBottom: isMobile ? '1rem' : '1.5rem', 
-          fontSize: isMobile ? '1.125rem' : '1.5rem',
+          marginBottom: isMobile ? techResponsive.titleMargin : '1.5rem', 
+          fontSize: isMobile ? techResponsive.title : '1.5rem',
           textAlign: 'center'
         }}
       >
