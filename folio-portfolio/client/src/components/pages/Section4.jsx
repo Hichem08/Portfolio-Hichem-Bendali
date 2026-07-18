@@ -30,16 +30,16 @@ export default function Section4({ section }) {
   const getTechResponsive = () => {
   const width = window.innerWidth;
 
-  if (width <= 320)
+  if (width <= 430)
     return {
       sectionPadding: '0 6px',
       groupGap: '1.2rem',
-      title: '0.95rem',
-      icon: '1.2rem',
+      title: '1.2rem',
+      icon: '1.7rem',
       text: '0.55rem',
       iconGap: '3px',
       gridGap: '0.7rem',
-      titleMargin: '0.8rem',
+      titleMargin: '1.0rem',
     };
 
   if (width <= 360)
@@ -58,8 +58,8 @@ export default function Section4({ section }) {
     return {
       sectionPadding: '0 10px',
       groupGap: '1.7rem',
-      title: '1.05rem',
-      icon: '1.45rem',
+      title: '1.0rem',
+      icon: '1.25rem',
       text: '0.65rem',
       iconGap: '4px',
       gridGap: '0.9rem',
@@ -68,12 +68,12 @@ export default function Section4({ section }) {
 
   if (width <= 390)
     return {
-      sectionPadding: '0 12px',
-      groupGap: '1.8rem',
-      title: '1.1rem',
-      icon: '1.55rem',
-      text: '0.70rem',
-      iconGap: '4px',
+      sectionPadding: '0 1px',
+      groupGap: '1.0rem',
+      title: '0,5rem',
+      icon: '0.2rem',
+      text: '0.20rem',
+      iconGap: '1px',
       gridGap: '1rem',
       titleMargin: '1rem',
     };
