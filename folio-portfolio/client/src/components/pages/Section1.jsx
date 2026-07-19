@@ -129,7 +129,7 @@ export default function Section1({ section, onScrollToSection }) {
           background: 'transparent',
           borderRadius: '24px',
           marginRight: isMobile ? '0' : '618px', // Remove right margin on mobile
-          marginTop: isMobile ? '150px' : '90px', // Move the hero text lower on mobile
+          marginTop: isMobile ? '130px' : '90px', // Move the hero text lower on mobile
           textAlign: 'center', // Center text on all devices
         }}
       >

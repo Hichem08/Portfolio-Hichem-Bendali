@@ -39,7 +39,7 @@ export default function Section4({ section }) {
       text: '0.55rem',
       iconGap: '3px',
       gridGap: '0.7rem',
-      titleMargin: '1.0rem',
+      titleMargin: '1.2rem',
     };
 
   if (width <= 360)

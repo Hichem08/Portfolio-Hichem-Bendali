@@ -74,15 +74,15 @@ export default function Section2({ section }) {
   }
 
   if (width <= 375) {
-    return { width: 52, height: 70, margin: '0 5px' };
+    return { width: 52, height: 50, margin: '0 5px' };
   }
 
   if (width <= 390) {
-    return { width: 56, height: 75, margin: '0 2px' };
+    return { width: 56, height: 65, margin: '0 2px' };
   }
 
   if (width <= 768) {
-    return { width: 60, height: 80 };
+    return { width: 60, height: 65 };
   }
 
   return { width: 90, height: 120 };
@@ -120,7 +120,7 @@ const getAboutCardSize = () => {
       radius: 14,
       title: 18,
       text: 10.5,
-      maxHeight: 130,
+      maxHeight: 120,
     };
   }
 
@@ -142,7 +142,7 @@ const getAboutCardSize = () => {
       radius: 16,
       title: 20,
       text: 12,
-      maxHeight: 150,
+      maxHeight: 120,
     };
   }
 
@@ -179,7 +179,7 @@ const aboutCard = getAboutCardSize();
           maxWidth: '900px',
           margin: '0 auto',
           padding: '96px 20px 20px',
-          gap: '20px',
+          gap: '7px',
         }}>
           {/* 1. About Me Card (Top) */}
           <motion.div

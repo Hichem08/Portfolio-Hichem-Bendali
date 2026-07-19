@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, forwardRef } from 'react'
-import a from '../../assets/images/a.jpg'
-import after from '../../assets/images/after.jpg'
-import Cours from '../../assets/images/Cours.jpg'
-import Europe from '../../assets/images/Europe.jpg'
-import logo from '../../assets/images/logo.jpg'
+import a2 from '../../assets/images/a2.jpg'
+import after2 from '../../assets/images/after2.jpg'
+import Cours2 from '../../assets/images/Cours2.jpg'
+import Europe2 from '../../assets/images/Europe2.jpg'
+import logo2 from '../../assets/images/logo2.jpg'
 
 export default function Section5({ section }) {
   const title = section?.title || 'GRAPHIC DESIGN'
@@ -65,7 +65,7 @@ export default function Section5({ section }) {
 
       photosMarginTop: '6rem',
 
-      containerHeight: 300,
+      containerHeight: 290,
     };
 
   if (width <= 375)
@@ -86,7 +86,7 @@ export default function Section5({ section }) {
 
       photosMarginTop: '7rem',
 
-      containerHeight: 340,
+      containerHeight: 320,
     };
 
   if (width <= 390)
@@ -107,7 +107,7 @@ export default function Section5({ section }) {
 
       photosMarginTop: '8rem',
 
-      containerHeight: 360,
+      containerHeight: 340,
     };
 
     if (width <= 430)
@@ -128,7 +128,7 @@ export default function Section5({ section }) {
 
       photosMarginTop: '9rem',
 
-      containerHeight: 390,
+      containerHeight: 360,
     };
 
   return {
@@ -148,7 +148,7 @@ export default function Section5({ section }) {
 
     photosMarginTop: '10rem',
 
-    containerHeight: 400,
+    containerHeight: 390,
   };
   
 };
@@ -216,7 +216,7 @@ const gallery = getGalleryResponsive();
       y: '15px',
       zIndex: 50,
       direction: 'left',
-      src: logo,
+      src: logo2,
       objectFit: 'cover',
       loading: 'lazy',
     },
@@ -227,7 +227,7 @@ const gallery = getGalleryResponsive();
       y: '32px',
       zIndex: 40,
       direction: 'left',
-      src: Cours,
+      src: Cours2,
       loading: 'lazy',
     },
     {
@@ -237,7 +237,7 @@ const gallery = getGalleryResponsive();
       y: '8px',
       zIndex: 30,
       direction: 'right',
-      src: a,
+      src: a2,
       loading: 'lazy',
     },
     {
@@ -247,7 +247,7 @@ const gallery = getGalleryResponsive();
       y: '22px',
       zIndex: 20,
       direction: 'right',
-      src: Europe,
+      src: Europe2,
       loading: 'lazy',
     },
     {
@@ -257,7 +257,7 @@ const gallery = getGalleryResponsive();
       y: '44px',
       zIndex: 10,
       direction: 'left',
-      src: after,
+      src: after2,
       loading: 'lazy',
     },
   ]
