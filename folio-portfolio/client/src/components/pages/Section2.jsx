@@ -236,12 +236,12 @@ const aboutCard = getAboutCardSize();
             transition={{ duration: 0.25, delay: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             style={{
-              width: '76%',
+              width: '70%',
+              maxWidth: '500px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
-              marginRight: '60px',
             }}
           >
             <h3 style={{
@@ -319,7 +319,8 @@ const aboutCard = getAboutCardSize();
             style={{
               width: '100%',
               maxWidth: '400px',
-              height: '200px',
+              aspectRatio: '16 / 10',
+              height: 'auto',
               borderRadius: '16px',
               overflow: 'hidden',
               zIndex: 10,
