@@ -26,13 +26,6 @@ body {
 }
 
 /* ================================================
-   RESPONSIVE BREAKPOINTS (use these only)
-   Mobile:  max-width: 767px
-   Tablet:  768px – 1023px
-   Desktop: min-width: 1024px
-   ================================================ */
-
-/* ================================================
    LOADING & ERROR SCREENS
    ================================================ */
 .loading-screen,
@@ -242,36 +235,41 @@ nav {
 /* ================================================
    RESPONSIVE STYLES FOR SECTION 1 (HERO)
    ================================================ */
-
-/* Phones: max-width: 767px */
-@media (max-width: 767px) {
+/* Styles for screens smaller than 768px (mobile phones) */
+@media (max-width: 768px) {
+  /* Adjust hero container on mobile */
   .hero-content {
-    margin-right: 0;
-    margin-top: clamp(150px, 25vw, 220px);
-    padding: 0 clamp(12px, 3vw, 20px);
+    margin-right: 0 !important; /* Remove right margin on mobile */
+    margin-top: 60px !important; /* Less top margin */
+    padding: 0 20px !important; /* Add horizontal padding */
   }
 
+  /* Adjust hero title font size for mobile */
   .hero-content h1 {
-    font-size: clamp(24px, 6vw, 36px);
+    font-size: 36px !important;
   }
 
+  /* Make sure company logo grid looks good on mobile */
   .company-logo {
-    height: clamp(80px, 15vw, 130px);
-    margin-top: clamp(6px, 2vw, 10px);
+    height: 130px !important; /* Smaller height */
+    margin-top: 10px !important;
   }
+
+
 }
 
-/* Tablets: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Styles for screens between 768px and 1024px (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .hero-content {
-    margin-right: clamp(50px, 8vw, 100px);
-    padding: clamp(15px, 3vw, 40px);
+    margin-right: 100px !important; /* Reduce right margin on tablet */
+    padding: 20px 40px !important;
   }
 
   .hero-content h1 {
-    font-size: clamp(40px, 6vw, 56px);
+    font-size: 56px !important;
   }
 }
+
 /* ================================================
    RESPONSIVE STYLES FOR SECTION 2 (ABOUT ME)
    ================================================ */
@@ -304,130 +302,70 @@ nav {
 /* ================================================
    RESPONSIVE STYLES FOR SECTION 3 (FEATURED SERVICES)
    ================================================ */
-
-/* Phones: max-width: 767px */
-@media (max-width: 767px) {
+/* Mobile/Tablet styles for Section 3 */
+@media (max-width: 768px) {
   .services-carousel-grid {
-    grid-template-columns: 1fr;
-    gap: clamp(2px, 2vw, 10px);
-    padding: 0 clamp(2px, 2vw, 10px);
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 0 20px !important;
   }
 
   .service-carousel-card {
-    max-width: 100%;
-  }
-}
-
-/* Tablets: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .services-carousel-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(15px, 3vw, 20px);
-    padding: 0 clamp(15px, 3vw, 20px);
-  }
-
-  .service-carousel-card {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 }
 
 /* ================================================
    RESPONSIVE STYLES FOR SECTION 4 (TECH STACK)
    ================================================ */
-
-/* Phones: max-width: 767px */
-@media (max-width: 767px) {
+/* Mobile/Tablet styles for Section 4 */
+@media (max-width: 768px) {
   .tech-stack-container {
-    padding: 0 clamp(12px, 3vw, 16px);
+    padding: 0 1rem;
   }
   
   .tech-icons-grid {
-    gap: clamp(10px, 2.5vw, 16px);
-  }
-}
-
-/* Tablets: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .tech-stack-container {
-    padding: 0 clamp(15px, 4vw, 20px);
-  }
-  
-  .tech-icons-grid {
-    gap: clamp(12px, 3vw, 16px);
+    gap: 1rem !important;
   }
 }
 
 /* ================================================
    RESPONSIVE STYLES FOR SECTION 5 (GRAPHIC DESIGN)
    ================================================ */
-
-/* Phones: max-width: 767px */
-@media (max-width: 767px) {
+/* Mobile/Tablet styles for Section 5 */
+@media (max-width: 768px) {
   .gallery-container {
-    padding: clamp(12px, 3vw, 26px) clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 1rem 1rem 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
   }
   
   .gallery-photos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(8px, 2vw, 12px);
-    position: relative;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    position: relative !important;
+    width: 100% !important;
   }
   
   .gallery-photo-wrapper {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
   }
   
   .gallery-photos-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 }
 
-/* Tablets: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .gallery-container {
-    padding: clamp(14px, 3.5vw, 18px) clamp(14px, 3.5vw, 18px) clamp(24px, 5vw, 36px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .gallery-photos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(10px, 2.5vw, 14px);
-    position: relative;
-    width: 100%;
-  }
-  
-  .gallery-photo-wrapper {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-  }
-  
-  .gallery-photos-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-}
 /* ================================================
    SECTION TITLE - SHARED ACROSS SECTIONS
    ================================================ */
@@ -872,104 +810,8 @@ nav {
   transition: background 0.2s ease;
 }
 
-/* About section - mobile layout (Section 2) */
-.about-mobile-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: clamp(72px, 18vw, 96px) clamp(12px, 4vw, 20px) 20px;
-  gap: clamp(14px, 4vw, 20px);
-}
-
-.about-mobile-card {
-  width: 100%;
-  max-width: min(700px, 100%);
-  padding: clamp(8px, 3vw, 15px);
-  border-radius: clamp(10px, 3vw, 16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-  backdrop-filter: blur(8px);
-}
-
-.about-mobile-card h2 {
-  font-size: clamp(16px, 4.5vw, 20px);
-  margin-bottom: clamp(6px, 2vw, 10px);
-  text-align: center;
-}
-
-.about-mobile-card-text {
-  max-height: clamp(110px, 32vw, 150px);
-  overflow-y: auto;
-  text-align: center;
-}
-
-.about-mobile-card-text p {
-  font-size: clamp(9px, 2.8vw, 12px);
-  color: #aaa;
-  line-height: 1.6;
-  margin-bottom: clamp(6px, 2vw, 10px);
-}
-
-.diploma-slot--responsive {
-  width: clamp(42px, 14vw, 60px);
-  height: auto;
-  aspect-ratio: 3 / 4;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-}
-
-.diploma-slot--responsive img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Tech stack - mobile fluid sizing (Section 4) */
-@media (max-width: 767px) {
-  .tech-stack-mobile {
-    padding: 0 clamp(6px, 3vw, 12px);
-  }
-
-  .tech-stack-mobile .tech-cards-column {
-    gap: clamp(1.2rem, 5vw, 2rem);
-  }
-
-  .tech-stack-mobile .tech-card-title {
-    font-size: clamp(0.95rem, 3.2vw, 1.125rem);
-    margin-bottom: clamp(0.8rem, 3vw, 1rem);
-  }
-
-  .tech-stack-mobile .tech-icon {
-    font-size: clamp(1.2rem, 5vw, 1.75rem) !important;
-  }
-
-  .tech-stack-mobile .tech-icon-label {
-    font-size: clamp(0.55rem, 2.5vw, 0.75rem);
-  }
-
-  .tech-stack-mobile .tech-icons-grid {
-    gap: clamp(0.7rem, 3vw, 1rem);
-  }
-
-  .tech-stack-mobile .tech-icon-container {
-    gap: clamp(3px, 1vw, 4px);
-  }
-}
-
-/* Services carousel - mobile fluid card (Section 3) */
-@media (max-width: 767px) {
-  .service-mobile-card {
-    width: min(87%, 300px);
-    max-width: 300px;
-    margin: 0 auto;
-  }
+.diploma-lightbox-close:hover {
+  background: rgba(255, 87, 34, 0.75);
 }
 
 /* Social media button styling */
@@ -1568,102 +1410,118 @@ h2 span:hover {
   transform: translateY(0);
 }
 
-/* Gallery - mobile stacked layout (Section 5) */
-.gallery-photos-container--mobile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: clamp(250px, 70vw, 400px);
-  justify-content: center;
-  margin-top: clamp(3rem, 10vw, 6rem);
-  gap: clamp(0.5rem, 2.5vw, 0.95rem);
-}
-
-.gallery-photos--mobile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  gap: clamp(0.5rem, 2.5vw, 0.95rem);
-}
-
-.gallery-photo-wrapper--mobile {
-  position: relative !important;
-  left: 0 !important;
-  top: 0 !important;
-  transform: none !important;
-}
-
-.photo-wrapper--fluid {
-  width: clamp(150px, 52vw, 210px) !important;
-  height: auto !important;
-  aspect-ratio: 2 / 1;
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
   .gallery-container {
-    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 1.5rem);
+    padding: 50px 16px;
   }
 
   .gallery-title {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    margin-bottom: clamp(1.25rem, 3vw, 1.875rem);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
   }
 
   .gallery-wrapper {
-    min-height: clamp(280px, 40vw, 320px);
-    margin: clamp(1.25rem, 3vw, 1.875rem) 0;
+    min-height: 320px;
+    margin: 30px 0;
   }
 
   .gallery-photos {
-    height: clamp(180px, 25vw, 200px);
-    width: clamp(180px, 25vw, 200px);
+    height: 200px;
+    width: 200px;
   }
 
-  .photo-inner,
+  .photo-inner {
+    border-radius: 20px;
+  }
+
   .photo-image {
     border-radius: 20px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .gallery-container {
-    padding: clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 3vw, 1rem);
+    padding: 40px 12px;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .gallery-wrapper {
+    min-height: 280px;
+    margin: 25px 0;
+  }
+
+  .gallery-photos {
+    height: 160px;
+    width: 160px;
+  }
+
+  .photo-inner {
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .photo-image {
+    border-radius: 16px;
+  }
+
+  .gallery-button {
+    padding: 10px 24px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    padding: 30px 12px;
   }
 
   .gallery-bg-gradient {
     display: none;
   }
 
-  .gallery-subtitle {
-    display: none;
+  .gallery-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
 
-  .gallery-title {
-    font-size: clamp(1.25rem, 5vw, 2rem);
-    margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
-    height: auto;
-    min-height: clamp(60px, 18vw, 100px);
+  .gallery-subtitle {
+    font-size: 10px;
   }
 
   .gallery-wrapper {
-    min-height: clamp(220px, 60vw, 280px);
-    margin: clamp(1rem, 3vw, 1.5rem) 0;
+    min-height: 240px;
+    margin: 20px 0;
+  }
+
+  .gallery-photos {
+    height: 140px;
+    width: 140px;
   }
 
   .photo-inner {
-    border-radius: clamp(12px, 3vw, 16px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
   }
 
   .photo-image {
-    border-radius: clamp(12px, 3vw, 16px);
+    border-radius: 14px;
   }
 
   .gallery-button {
-    padding: clamp(8px, 2vw, 10px) clamp(16px, 5vw, 24px);
-    font-size: clamp(11px, 2.8vw, 12px);
+    padding: 8px 20px;
+    font-size: 11px;
+  }
+}
+
+/* Hide subtitle on mobile */
+@media (max-width: 640px) {
+  .gallery-subtitle {
+    display: none;
   }
 }
 
@@ -1748,69 +1606,175 @@ h2 span:hover {
   line-height: 1.4;
 }
 
-/* Phones */
-@media (max-width: 767px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .solar-items-wrapper {
     gap: 8px;
     margin-top: 30px;
   }
 
   .solar-grid {
-    gap: 1px;
+    gap: 30px;
   }
 
   .solar-image {
-    height: clamp(310px, 28vw, 250px);
-    width: clamp(150px, 28vw, 250px);
-    object-fit: cover;
+    height: 250px;
   }
 
   .solar-title {
-    font-size: clamp(20px, 3vw, 24px);
+    font-size: 24px;
     margin-bottom: 8px;
-    padding: 5px;
   }
 
   .solar-description {
-    font-size: clamp(14px, 2vw, 16px);
-    line-height: 1.6;
-    padding: 4px;
+    font-size: 16px;
+    line-height: 1.5;
   }
-
 }
 
-
-
-/* Tablets */
-@media (min-width: 768px) and (max-width: 1023px) { 
-  .solar-title {
-    font-size: clamp(24px, 5vw, 30px);
+@media (max-width: 768px) {
+  .solar-container {
+    padding: 0 clamp(12px, 4vw, 20px);
   }
+
+  .solar-items-wrapper {
+    gap: clamp(14px, 4vw, 22px);
+    margin-top: clamp(16px, 5vw, 25px);
+  }
+
+  .solar-grid {
+    grid-template-columns: minmax(100px, 38%) 1fr;
+    gap: clamp(10px, 3vw, 16px);
+    align-items: center;
+  }
+
+  .solar-grid.reversed {
+    direction: rtl;
+  }
+
+  .solar-image-wrap {
+    border-radius: clamp(8px, 2.5vw, 12px);
+  }
+
+  .solar-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+    border-radius: clamp(8px, 2.5vw, 12px);
+  }
+
+  .solar-title {
+    font-size: clamp(13px, 3.8vw, 17px);
+    margin-bottom: clamp(4px, 1.2vw, 6px);
+    letter-spacing: 0.5px;
+  }
+
   .solar-description {
-    font-size: clamp(16px, 3vw, 18px);
+    font-size: clamp(10px, 2.9vw, 13px);
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 480px) {
+  .solar-grid {
+    grid-template-columns: minmax(88px, 36%) 1fr;
+    gap: clamp(8px, 2.5vw, 12px);
+  }
+
+  .solar-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .solar-title {
+    font-size: clamp(12px, 3.4vw, 15px);
+  }
+
+  .solar-description {
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 390px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 90%) 1fr;
+    gap: 8px;
+  }
+
+  .solar-image {
+    aspect-ratio: 1.3 / 2;
+  }
+
+  .solar-title {
+    font-size: 11px;
+  }
+
+  .solar-description {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 430px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 70%) 1fr;
+    gap: 8px;
+    
+}
+.solar-image {
+  aspect-ratio: 1.3 / 2;
+}
+.solar-title {
+  font-size: 12px;
+}
+.solar-description {
+  font-size: 14px;
+  line-height: 1.55;
+}
+.solar-container {
+  margin-top: 40px;
+}
+};
+
+@media (min-width: 375px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 80%) 1fr;
+    gap: 8px;
   }
   .solar-image {
-    height: clamp(280px, 35vw, 320px);
+    aspect-ratio: 1.6 / 2;
+  }
+  .solar-title {
+    font-size: 10px;
+  }
+  .solar-description {
+    font-size: 9px;
+    line-height: 1.35;
   }
   .solar-container {
     margin-top: 50px;
   }
 }
 
-/* Desktop */
-@media (min-width: 1024px) { 
-  .solar-title {
-    font-size: clamp(30px, 5vw, 36px);
-  }
-  .solar-description {
-    font-size: clamp(18px, 3vw, 20px);
+@media (max-width: 360px) {
+  .solar-grid {
+    grid-template-columns: minmax(78px, 70%) 1fr;
+    gap: 8px;
   }
   .solar-image {
-    height: clamp(320px, 35vw, 320px);
+    aspect-ratio: 1.3 / 2;
   }
-  .solar-container {
-    margin-top: 30px;
-  }
+
+.solar-title {
+  font-size: 11px;
+}
+.solar-description {
+  font-size: 12px;
+  line-height: 1.35;
+}
+.solar-container {
+  margin-top: 40px;
+}
 }
 
 /* ================================================
@@ -1930,7 +1894,7 @@ h2 span:hover {
 /* ================================================
    RESPONSIVE DESIGN - MEDIA QUERIES
    ================================================ */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* Mobile Nav */
   nav {
     padding: 10px 14px 12px;
@@ -1969,7 +1933,7 @@ h2 span:hover {
 
   /* Hero section mobile */
   .hero-content h1 {
-    font-size: clamp(28px, 8vw, 48px);
+    font-size: 48px;
   }
 
   /* Content grids become 1 column */
@@ -2015,7 +1979,7 @@ h2 span:hover {
   /* Services carousel mobile */
   .services-carousel-grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 30px;
   }
 
   /* Tech section mobile */
@@ -2077,156 +2041,76 @@ h2 span:hover {
   }
 
   h2 {
-    font-size: clamp(36px, 10vw, 48px) !important;
+    font-size: 48px !important;
   }
 
   .carousel-container {
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 4 / 3;
   }
 
   .carousel-button {
-    padding: clamp(8px, 2vw, 10px) clamp(14px, 4vw, 20px);
-    font-size: clamp(7px, 2.8vw, 12px);
-  }
-
-  .carousel-card-title {
-    font-size: clamp(18px, 4.5vw, 20px);
-  }
-
-  .carousel-arrow {
-    width: clamp(32px, 8vw, 35px);
-    height: clamp(32px, 8vw, 35px);
-    font-size: clamp(14px, 3.5vw, 16px);
-  }
-
-  .carousel-counter {
-    font-size: clamp(9px, 2.5vw, 10px);
-  }
-
-  .dot {
-    width: clamp(5px, 1.5vw, 6px);
-    height: clamp(5px, 1.5vw, 6px);
-  }
-
-  .dot.active {
-    width: clamp(14px, 4vw, 18px);
-  }
-
-  .service-carousel-card {
-    padding: clamp(16px, 4vw, 20px);
-    gap: clamp(8px, 3vw, 15px);
-  }
-  
-
-  /* Contact section7 mobile */
-  .contact-top-section {
-    grid-template-columns: 1fr !important;
-    gap: clamp(54px, 4vw, 16px) !important;
-    padding: clamp(62px, 16vw, 72px) clamp(14px, 4vw, 20px) 0 clamp(14px, 4vw, 20px) !important;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .contact-top-section h1 {
-    font-size: clamp(44px, 8vw, 42px) !important;
-    margin-bottom: 0 !important;
-    letter-spacing: -1.2px !important;
-    text-align: center;
-    margin-top: 69px;
-  }
-
-  .contact-top-section > div {
-    text-align: center !important;
-  }
-
-  .contact-collab-button {
-    padding: clamp(9px, 2.5vw, 10px) clamp(14px, 4vw, 18px) !important;
-    font-size: clamp(15px, 2.8vw, 11px) !important;
-    letter-spacing: 0.7px !important;
-    gap: 8px !important;
-    margin-bottom: clamp(16px, 5vw, 25px) !important;
-  }
-
-  .contact-footer {
-    grid-template-columns: 1fr !important;
-    gap: clamp(14px, 4vw, 62px) !important;
-    padding: 0 clamp(14px, 4vw, 20px) clamp(14px, 3vw, 18px) clamp(14px, 4vw, 20px) !important;
-  }
-
-  .contact-footer > div {
-    text-align: left !important;
-    min-width: 0;
-  }
-
-  .contact-footer > div:first-child p,
-  .contact-footer > div:nth-child(2) p,
-  .contact-footer > div:nth-child(3) p {
-    font-size: clamp(12px, 2.5vw, 10px) !important;
-    letter-spacing: 0.7px !important;
-    margin-bottom: 8px !important;
-  }
-
-  .contact-footer > div:nth-child(2) a,
-  .contact-footer > div:nth-child(3) a {
-    font-size: clamp(20px, 3.5vw, 19px) !important;
-    gap: 9px !important;
-  }
-
-  .contact-footer svg {
-    font-size: 20px !important;
-  }
-
-  .contact-footer > div:nth-child(3) > div {
-    justify-content: flex-start !important;
-    gap: clamp(10px, 3vw, 12px) !important;
-    flex-wrap: wrap !important;
-  }
-
-  .contact-name-display {
-    padding-top: clamp(18px, 5vw, 22px) !important;
-  }
-
-  .contact-name-display > div {
-    gap: clamp(6px, 2vw, 15px) !important;
-    justify-content: center !important;
-    flex-wrap: nowrap !important;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .contact-name-display > div > div {
-    width: clamp(34px, 10vw, 40px) !important;
-    min-width: clamp(34px, 10vw, 40px) !important;
-  }
-
-  .contact-name-display > div > div > div {
-    gap: 1px !important;
-    margin-bottom: 1px !important;
-  }
-
-  .contact-name-display > div > div > div > div {
-    height: clamp(4px, 1.2vw, 4px) !important;
-    border-radius: 1px !important;
-  }
-
-  .contact-footer-left {
-    text-align: center !important;
-    margin-left: clamp(0px, 25vw, 120px) !important;
-  }
-
-  .diplomas-section {
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .diplomas-card {
-    max-width: 100%;
-    width: 100%;
+    padding: 10px 20px;
+    font-size: 12px;
   }
 }
 
-/* Section 7 - tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 480px) {
+  .services-carousel-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-carousel-card {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .carousel-card-title {
+    font-size: 18px;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .carousel-counter {
+    font-size: 10px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  h2 {
+    font-size: 36px !important;
+  }
+
+  .carousel-container {
+    aspect-ratio: 3 / 2;
+  }
+
+  .carousel-dots {
+    gap: 6px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .dot.active {
+    width: 18px;
+  }
+
+  .carousel-button {
+    padding: 8px 16px;
+    font-size: 11px;
+    gap: 4px;
+  }
+}
+
+/* Section 7 responsive tuning without affecting desktop layout */
+@media (min-width: 769px) and (max-width: 1024px) {
   .contact-top-section {
     padding: 78px 32px 0 32px !important;
     gap: 24px !important;
@@ -2293,4 +2177,184 @@ h2 span:hover {
     height: 7px !important;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-top-section {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 72px 20px 0 20px !important;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .contact-top-section h1 {
+    font-size: clamp(28px, 8.5vw, 42px) !important;
+    margin-bottom: 0 !important;
+    letter-spacing: -1.2px !important;
+    text-align: center;
+  }
+
+  .contact-top-section > div {
+    text-align: center !important;
+  }
+
+  .contact-collab-button {
+    padding: 10px 18px !important;
+    font-size: 11px !important;
+    letter-spacing: 0.7px !important;
+    gap: 8px !important;
+  }
+
+  .contact-footer {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 0 20px 18px 20px !important;
+  }
+
+  .contact-footer > div {
+    text-align: left !important;
+    min-width: 0;
+  }
+
+  .contact-footer > div:first-child p,
+  .contact-footer > div:nth-child(2) p,
+  .contact-footer > div:nth-child(3) p {
+    font-size: 10px !important;
+    letter-spacing: 0.7px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .contact-footer > div:nth-child(2) a,
+  .contact-footer > div:nth-child(3) a {
+    font-size: 11px !important;
+    gap: 8px !important;
+  }
+
+  .contact-footer svg {
+    font-size: 13px !important;
+  }
+
+  .contact-footer > div:nth-child(3) > div {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .contact-name-display {
+    padding-top: 22px !important;
+  }
+
+  .contact-name-display > div {
+    gap: 6px !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .contact-name-display > div > div {
+    width: 40px !important;
+    min-width: 40px !important;
+  }
+
+  .contact-name-display > div > div > div {
+    gap: 1px !important;
+    margin-bottom: 1px !important;
+  }
+
+  .contact-name-display > div > div > div > div {
+    height: 4px !important;
+    border-radius: 1px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-top-section {
+    padding: 62px 14px 0 14px !important;
+    gap: 15px !important;
+    margin-top: 100px !important;
+  }
+
+  .contact-top-section h1 {
+    font-size: clamp(24px, 8vw, 32px) !important;
+    letter-spacing: -1px !important;
+  }
+
+  .contact-collab-button {
+    padding: 9px 14px !important;
+    font-size: 10px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .contact-footer {
+    padding: 0 14px 14px 14px !important;
+    gap: 62px !important;
+  }
+
+  .contact-footer > div:nth-child(2) a,
+  .contact-footer > div:nth-child(3) a {
+    font-size: 19px !important;
+  }
+
+  .contact-footer > div:nth-child(3) > div {
+    gap: 10px !important;
+  }
+
+  .contact-name-display {
+    padding-top: 18px !important;
+  }
+
+  .contact-name-display > div {
+    gap: 15px !important;
+  }
+
+  .contact-name-display > div > div {
+    width: 40px !important;
+    min-width: 34px !important;
+  }
+
+  .contact-name-display > div > div > div {
+    gap: 1px !important;
+  }
+
+  .contact-name-display > div > div > div > div {
+    height: 4px !important;
+  }
+
+  .contact-footer-left {
+    text-align: center !important;
+    margin-left: 120px !important;
+  }
+}
+
+@media (max-width: 390px) {
+
+  .hero-content h1 {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 100px;
+  letter-spacing: -1px;
+}
+
+  .diplomas-section {
+    align-items: flex-start;
+    width: 100%;
+    
+  }
+
+  .diplomas-card {
+    max-width: 100%;
+    width: 100%;
+    height: 100px;
+  }
+
+}
+
+
+
+    
+  
+
+  
 

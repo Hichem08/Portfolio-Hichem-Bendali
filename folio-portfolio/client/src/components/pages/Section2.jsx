@@ -74,15 +74,15 @@ export default function Section2({ section }) {
   }
 
   if (width <= 375) {
-    return { width: 52, height: 50, margin: '0 5px' };
+    return { width: 52, height: 70, margin: '0 5px' };
   }
 
   if (width <= 390) {
-    return { width: 56, height: 65, margin: '0 2px' };
+    return { width: 56, height: 75, margin: '0 2px' };
   }
 
   if (width <= 768) {
-    return { width: 60, height: 65 };
+    return { width: 60, height: 80 };
   }
 
   return { width: 90, height: 120 };
@@ -120,7 +120,7 @@ const getAboutCardSize = () => {
       radius: 14,
       title: 18,
       text: 10.5,
-      maxHeight: 120,
+      maxHeight: 130,
     };
   }
 
@@ -142,7 +142,7 @@ const getAboutCardSize = () => {
       radius: 16,
       title: 20,
       text: 12,
-      maxHeight: 120,
+      maxHeight: 150,
     };
   }
 
@@ -179,7 +179,7 @@ const aboutCard = getAboutCardSize();
           maxWidth: '900px',
           margin: '0 auto',
           padding: '96px 20px 20px',
-          gap: '7px',
+          gap: '20px',
         }}>
           {/* 1. About Me Card (Top) */}
           <motion.div
@@ -236,12 +236,12 @@ const aboutCard = getAboutCardSize();
             transition={{ duration: 0.25, delay: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             style={{
-              width: '70%',
-              maxWidth: '500px',
+              width: '76%',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
+              marginRight: '60px',
             }}
           >
             <h3 style={{
@@ -319,8 +319,7 @@ const aboutCard = getAboutCardSize();
             style={{
               width: '100%',
               maxWidth: '400px',
-              aspectRatio: '16 / 10',
-              height: 'auto',
+              height: '200px',
               borderRadius: '16px',
               overflow: 'hidden',
               zIndex: 10,
