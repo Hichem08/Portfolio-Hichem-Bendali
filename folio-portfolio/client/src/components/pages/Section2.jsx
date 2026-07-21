@@ -203,6 +203,7 @@ const aboutCard = getAboutCardSize();
                 fontSize: '20px',
                 marginBottom: '10px',
                 textAlign: 'center',
+                textTransform: 'uppercase',
               }}
             >
               About <span style={{ color: '#ff5722' }}>Me</span>

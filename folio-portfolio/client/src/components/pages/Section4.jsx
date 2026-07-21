@@ -156,7 +156,7 @@ const techResponsive = getTechResponsive();
   : '2.5rem' }} />
         <span style={{ color: '#fff', fontSize: isMobile
   ? techResponsive.text
-  : '0.875rem', textAlign: 'center' }}>{tech.name}</span>
+  : '0.875rem', textAlign: 'center', textTransform: isMobile ? 'uppercase' : 'none' }}>{tech.name}</span>
       </motion.div>
     )
   }
@@ -175,7 +175,8 @@ const techResponsive = getTechResponsive();
           color: '#ff5722', 
           marginBottom: isMobile ? techResponsive.titleMargin : '1.5rem', 
           fontSize: isMobile ? techResponsive.title : '1.5rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          textTransform: isMobile ? 'uppercase' : 'none'
         }}
       >
         {title}

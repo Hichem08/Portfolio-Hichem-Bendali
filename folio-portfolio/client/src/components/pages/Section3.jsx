@@ -271,7 +271,7 @@ maxWidth:serviceSize.cardWidth,
                     onClick={() => handlePrev(service.id)}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Previous image"
-                    style={{ width: '26px', height: '26px', fontSize: '12px', left: '6px' }}
+                    style={{ width: '40px', height: '40px', fontSize: '18px', left: '6px', borderRadius: '50%' }}
                   >
                     ←
                   </motion.button>
@@ -281,7 +281,7 @@ maxWidth:serviceSize.cardWidth,
                     onClick={() => handleNext(service.id)}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Next image"
-                    style={{ width: '26px', height: '26px', fontSize: '12px', right: '6px' }}
+                    style={{ width: '40px', height: '40px', fontSize: '18px', right: '6px', borderRadius: '50%' }}
                   >
                     →
                   </motion.button>
@@ -311,7 +311,7 @@ maxWidth:serviceSize.cardWidth,
                   transition={{ duration: 0.2, delay: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   whileTap={{ scale: 0.98 }}
-                  style={{ alignSelf: 'center', padding: '8px 14px', fontSize: '10px', gap: '4px' }}
+                  style={{ alignSelf: 'center', padding: '8px 14px', fontSize: '10px', gap: '4px', textTransform: 'uppercase' }}
                   onClick={() => {
                     if (cardIdx === 0) {
                       onScrollToSection && onScrollToSection('tech')
