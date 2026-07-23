@@ -213,7 +213,7 @@ const serviceSize = getServiceCardSize();
       style={{ position: 'relative', overflow: 'hidden' }}
     >
       {isMobile && (
-        <div style={{ position: 'relative', zIndex: 2, width: '80%', padding: '40px 14px 20px' }}>
+        <div style={{ position: 'relative', zIndex: 2, width: '80%', padding: '10px 14px 20px' }}>
           <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {services.map((service, cardIdx) => (
               <motion.div

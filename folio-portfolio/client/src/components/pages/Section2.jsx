@@ -178,7 +178,7 @@ const aboutCard = getAboutCardSize();
           width: '100%',
           maxWidth: '900px',
           margin: '0 auto',
-          marginTop: '60px',
+          marginTop: '45px',
           padding: '20px',
           gap: '1px',
           height: '95%',
