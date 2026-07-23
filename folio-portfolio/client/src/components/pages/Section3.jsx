@@ -114,14 +114,50 @@ export default function Section3({ section, onScrollToSection }) {
 
   if (width <= 320) {
     return {
-      cardWidth: 250,
+      cardWidth: 210,
+      padding: 6,
+      title: 10,
+      imageRatio: "16 / 10",
+      arrow: 24,
+      arrowFont: 11,
+      buttonFont: 8,
+      buttonPadding: "5px 9px",
+      dot: 4,
+      activeDot: 10,
+      counter: 7,
+      gap: 5,
+      radius: 8,
+    };
+  }
+
+  if (width <= 360) {
+    return {
+      cardWidth: 225,
+      padding: 7,
+      title: 11,
+      imageRatio: "16 / 10",
+      arrow: 26,
+      arrowFont: 12,
+      buttonFont: 8,
+      buttonPadding: "5px 10px",
+      dot: 4,
+      activeDot: 11,
+      counter: 8,
+      gap: 6,
+      radius: 9,
+    };
+  }
+
+  if (width <= 375) {
+    return {
+      cardWidth: 235,
       padding: 8,
       title: 11,
-      imageRatio: "16 / 11",
-      arrow: 20,
-      arrowFont: 10,
-      buttonFont: 8,
-      buttonPadding: "6px 10px",
+      imageRatio: "16 / 10",
+      arrow: 27,
+      arrowFont: 12,
+      buttonFont: 9,
+      buttonPadding: "6px 11px",
       dot: 4,
       activeDot: 12,
       counter: 8,
@@ -130,74 +166,38 @@ export default function Section3({ section, onScrollToSection }) {
     };
   }
 
-  if (width <= 360) {
-    return {
-      cardWidth: 270,
-      padding: 9,
-      title: 12,
-      imageRatio: "16 / 11",
-      arrow: 22,
-      arrowFont: 11,
-      buttonFont: 9,
-      buttonPadding: "7px 12px",
-      dot: 4,
-      activeDot: 13,
-      counter: 8,
-      gap: 7,
-      radius: 11,
-    };
-  }
-
-  if (width <= 375) {
-    return {
-      cardWidth: 285,
-      padding: 10,
-      title: 12,
-      imageRatio: "16 / 11",
-      arrow: 24,
-      arrowFont: 11,
-      buttonFont: 9,
-      buttonPadding: "7px 13px",
-      dot: 5,
-      activeDot: 14,
-      counter: 9,
-      gap: 8,
-      radius: 12,
-    };
-  }
-
   if (width <= 390) {
     return {
-      cardWidth: 300,
-      padding: 10,
-      title: 13,
-      imageRatio: "16 / 11",
-      arrow: 26,
-      arrowFont: 12,
-      buttonFont: 10,
-      buttonPadding: "8px 14px",
-      dot: 5,
-      activeDot: 14,
-      counter: 9,
-      gap: 8,
-      radius: 12,
+      cardWidth: 245,
+      padding: 8,
+      title: 11,
+      imageRatio: "16 / 10",
+      arrow: 28,
+      arrowFont: 13,
+      buttonFont: 9,
+      buttonPadding: "6px 12px",
+      dot: 4,
+      activeDot: 12,
+      counter: 8,
+      gap: 6,
+      radius: 10,
     };
   }
 
   return {
-    cardWidth: 300,
-    padding: 10,
-    title: 13,
-    imageRatio: "16 / 11",
-    arrow: 26,
-    arrowFont: 12,
-    buttonFont: 10,
-    buttonPadding: "8px 14px",
-    dot: 5,
-    activeDot: 14,
-    counter: 9,
-    gap: 8,
-    radius: 12,
+    cardWidth: 250,
+    padding: 8,
+    title: 11,
+    imageRatio: "16 / 10",
+    arrow: 28,
+    arrowFont: 13,
+    buttonFont: 9,
+    buttonPadding: "6px 12px",
+    dot: 4,
+    activeDot: 12,
+    counter: 8,
+    gap: 6,
+    radius: 10,
   };
 };
 
@@ -224,17 +224,16 @@ const serviceSize = getServiceCardSize();
                 viewport={{ once: true, amount: 0.25 }}
                 whileHover={{ y: -4 }}
                 style={{
-                  width:'87%',
-maxWidth:serviceSize.cardWidth,
-                  maxWidth: '300px',
+                  width: '87%',
+                  maxWidth: serviceSize.cardWidth,
                   margin: '0 auto',
                   background: 'linear-gradient(135deg, rgba(255, 87, 34, 0.06) 0%, rgba(255, 87, 34, 0) 100%)',
                   border: '1px solid rgba(255, 87, 34, 0.18)',
-                  borderRadius: '12px',
-                  padding: '10px',
+                  borderRadius: `${serviceSize.radius}px`,
+                  padding: `${serviceSize.padding}px`,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '8px',
+                  gap: `${serviceSize.gap}px`,
                   backdropFilter: 'blur(10px)',
                 }}
               >
@@ -246,7 +245,7 @@ maxWidth:serviceSize.cardWidth,
                   style={{
                     margin: 0,
                     color: '#fff',
-                    fontSize: '13px',
+                    fontSize: `${serviceSize.title}px`,
                     lineHeight: 1.2,
                     textTransform: 'uppercase',
                     letterSpacing: '0.6px',
@@ -256,7 +255,7 @@ maxWidth:serviceSize.cardWidth,
                   {service.title}
                 </motion.h3>
 
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 11', overflow: 'hidden', borderRadius: '9px', border: '1px solid rgba(255, 87, 34, 0.15)', background: 'linear-gradient(135deg, #1a1a1a 0%, #252525 100%)' }}>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: serviceSize.imageRatio, overflow: 'hidden', borderRadius: `${Math.max(serviceSize.radius - 2, 6)}px`, border: '1px solid rgba(255, 87, 34, 0.15)', background: 'linear-gradient(135deg, #1a1a1a 0%, #252525 100%)' }}>
                   <motion.img
                     src={service.images[activeCardIndex[service.id]]}
                     alt={`${service.title} image ${activeCardIndex[service.id] + 1}`}
@@ -271,7 +270,7 @@ maxWidth:serviceSize.cardWidth,
                     onClick={() => handlePrev(service.id)}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Previous image"
-                    style={{ width: '40px', height: '40px', fontSize: '18px', left: '6px', borderRadius: '50%' }}
+                    style={{ width: `${serviceSize.arrow}px`, height: `${serviceSize.arrow}px`, fontSize: `${serviceSize.arrowFont}px`, left: '4px', borderRadius: '50%' }}
                   >
                     ←
                   </motion.button>
@@ -281,17 +280,17 @@ maxWidth:serviceSize.cardWidth,
                     onClick={() => handleNext(service.id)}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Next image"
-                    style={{ width: '40px', height: '40px', fontSize: '18px', right: '6px', borderRadius: '50%' }}
+                    style={{ width: `${serviceSize.arrow}px`, height: `${serviceSize.arrow}px`, fontSize: `${serviceSize.arrowFont}px`, right: '4px', borderRadius: '50%' }}
                   >
                     →
                   </motion.button>
 
-                  <div className="carousel-counter" style={{ bottom: '6px', right: '6px', fontSize: '9px', padding: '3px 6px' }}>
+                  <div className="carousel-counter" style={{ bottom: '4px', right: '4px', fontSize: `${serviceSize.counter}px`, padding: '2px 5px' }}>
                     {activeCardIndex[service.id] + 1} / {service.images.length}
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '5px', marginTop: '1px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '4px', marginTop: '1px' }}>
                   {service.images.map((_, dotIdx) => (
                     <motion.button
                       key={dotIdx}
@@ -299,7 +298,7 @@ maxWidth:serviceSize.cardWidth,
                       onClick={() => setActiveCardIndex({ ...activeCardIndex, [service.id]: dotIdx })}
                       whileTap={{ scale: 0.9 }}
                       aria-label={`Go to image ${dotIdx + 1}`}
-                      style={{ width: activeCardIndex[service.id] === dotIdx ? '14px' : '5px', height: '5px' }}
+                      style={{ width: activeCardIndex[service.id] === dotIdx ? `${serviceSize.activeDot}px` : `${serviceSize.dot}px`, height: `${serviceSize.dot}px` }}
                     />
                   ))}
                 </div>
@@ -311,7 +310,7 @@ maxWidth:serviceSize.cardWidth,
                   transition={{ duration: 0.2, delay: 0 }}
                   viewport={{ once: true, amount: 0.25 }}
                   whileTap={{ scale: 0.98 }}
-                  style={{ alignSelf: 'center', padding: '8px 14px', fontSize: '10px', gap: '4px', textTransform: 'uppercase' }}
+                  style={{ alignSelf: 'center', padding: serviceSize.buttonPadding, fontSize: `${serviceSize.buttonFont}px`, gap: '4px', textTransform: 'uppercase' }}
                   onClick={() => {
                     if (cardIdx === 0) {
                       onScrollToSection && onScrollToSection('tech')
@@ -449,7 +448,7 @@ maxWidth:serviceSize.cardWidth,
               position: 'absolute',
               left: `${item.x}%`,
               top: `${item.y}%`,
-              fontSize: '40px',
+              fontSize: isMobile ? '20px' : '40px',
               zIndex: 1,
             }}
             variants={floatingVariants(idx * 0.3)}

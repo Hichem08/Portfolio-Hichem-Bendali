@@ -36,9 +36,9 @@ export default function Section5({ section }) {
 
       titleHeight: 60,
 
-      photoWidth: 150,
+      photoWidth: 120,
 
-      photoHeight: 75,
+      photoHeight: 60,
 
       photoGap: '0.5rem',
 
@@ -57,9 +57,9 @@ export default function Section5({ section }) {
 
       titleHeight: 70,
 
-      photoWidth: 165,
+      photoWidth: 155,
 
-      photoHeight: 82,
+      photoHeight: 67,
 
       photoGap: '0.6rem',
 
@@ -78,9 +78,9 @@ export default function Section5({ section }) {
 
       titleHeight: 80,
 
-      photoWidth: 180,
+      photoWidth: 170,
 
-      photoHeight: 90,
+      photoHeight: 75,
 
       photoGap: '0.7rem',
 
@@ -99,9 +99,9 @@ export default function Section5({ section }) {
 
       titleHeight: 90,
 
-      photoWidth: 190,
+      photoWidth: 180,
 
-      photoHeight: 95,
+      photoHeight: 70,
 
       photoGap: '0.75rem',
 
@@ -120,9 +120,9 @@ export default function Section5({ section }) {
 
       titleHeight: 90,
 
-      photoWidth: 210,
+      photoWidth: 200,
 
-      photoHeight: 99,
+      photoHeight: 69,
 
       photoGap: '0.95rem',
 
@@ -140,9 +140,9 @@ export default function Section5({ section }) {
 
     titleHeight: 100,
 
-    photoWidth: 200,
+    photoWidth: 190,
 
-    photoHeight: 100,
+    photoHeight: 80,
 
     photoGap: '0.75rem',
 
@@ -294,7 +294,7 @@ const gallery = getGalleryResponsive();
         
         <h3 className="gallery-title" style={{ 
           fontSize: isMobile ? '1.5rem' : '2.5rem', 
-          marginBottom: isMobile ? '0rem' : '2rem',
+          marginBottom: isMobile ? '2rem' : '2rem',
           textAlign: 'center',
           width: '100%',
           position: 'relative',
@@ -313,6 +313,7 @@ const gallery = getGalleryResponsive();
             style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
           >
             {isMobile ? (
+              
               // MOBILE/TABLET LAYOUT: Vertical stack of photos
               <motion.div
                 className="gallery-photos-container"
@@ -325,8 +326,8 @@ const gallery = getGalleryResponsive();
                   flexDirection: 'column', 
                   alignItems: 'center', 
                   gap:gallery.photoGap,
-                  marginTop: '0rem',
-                  width: '100%', height:gallery.containerHeight,
+                  marginBottom: '150px',
+                  width: '100%', height:'100%',
                   justifyContent: 'center'
                 }}
               >
@@ -339,6 +340,7 @@ const gallery = getGalleryResponsive();
                   justifyContent: 'center',
                   marginTop:gallery.photosMarginTop
                 }}>
+                
                   {photos.map((photo, index) => (
                     <motion.div
                       key={photo.id}
@@ -374,6 +376,7 @@ isMobile
                     </motion.div>
                   ))}
                 </div>
+
               </motion.div>
             ) : (
               // DESKTOP LAYOUT (unchanged)

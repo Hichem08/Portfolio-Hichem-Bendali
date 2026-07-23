@@ -178,8 +178,10 @@ const aboutCard = getAboutCardSize();
           width: '100%',
           maxWidth: '900px',
           margin: '0 auto',
-          padding: '96px 20px 20px',
-          gap: '20px',
+          marginTop: '70px',
+          padding: '20px',
+          gap: '1px',
+          height: '95%',
         }}>
           {/* 1. About Me Card (Top) */}
           <motion.div
@@ -209,7 +211,7 @@ const aboutCard = getAboutCardSize();
               About <span style={{ color: '#ff5722' }}>Me</span>
             </motion.h2>
             <div style={{
-              maxHeight: '150px',
+              maxHeight: '115px',
               overflowY: 'auto',
               textAlign: 'center',
             }}>
@@ -219,8 +221,8 @@ const aboutCard = getAboutCardSize();
                   style={{
                     fontSize: '12px',
                     color: '#aaa',
-                    marginBottom: idx < 1 ? '10px' : '0',
-                    lineHeight: '1.6',
+                    marginBottom: idx < 1 ? '1px' : '0',
+                    lineHeight: '1.5',
                   }}
                 >
                   {paragraph}
@@ -237,7 +239,7 @@ const aboutCard = getAboutCardSize();
             transition={{ duration: 0.25, delay: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             style={{
-              width: '76%',
+              width: '90%',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -248,9 +250,9 @@ const aboutCard = getAboutCardSize();
             <h3 style={{
               fontSize: '14px',
               color: '#ff5722',
-              marginBottom: '10px', marginTop: '9px',
+              marginBottom: '5px', marginTop: '10px',
               textTransform: 'uppercase',
-              letterSpacing: '3px',
+              letterSpacing: '5px',
               width: '100%',
             }}>
               My Diplômes
@@ -300,7 +302,7 @@ const aboutCard = getAboutCardSize();
             </motion.div>
             <p style={{
               fontSize: '10px',
-              color: 'rgba(255, 255, 255, 0.35)',
+              color: 'rgba(255, 255, 255, 0.6)',
               marginTop: '1px', marginBottom: '10px',
               textAlign: 'center',
               width: '100%',
@@ -350,9 +352,9 @@ const aboutCard = getAboutCardSize();
             <span style={{
               fontSize: '13px',
               color: '#ff5722',
-              marginBottom: '12px',
+              marginBottom: '10px',
               textTransform: 'uppercase',
-              letterSpacing: '1px',
+              letterSpacing: '3px',
             }}>
               My Social Media
             </span>
